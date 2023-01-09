@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>MIUI</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="topnav">
+            <a href="" id="toptext">MIUI</a>
+            <span style="color:696969">|</span>
+            <a href="" style="margin-right: 2px;">下載小米商城APP</a>
+            <span style="color:696969">|</span>
+            <a href="">小米積分中心</a>
+            <span style="color:696969">|</span>
+            <a href="" style="padding: 14px 0px 0px 14px;">登錄送活動</a>
+            <span style="color:696969">|</span>
+            <a href="">小米團購</a>
+            <a href="" style="margin-left: 450px;">登入</a>
+            <span style="color:696969">|</span>
+            <a href="">註冊</a>
+            <span style="color:696969">|</span>
+            <span style="min-height:40px;margin-left: 10px;text-align: center;"><a href style="height:40px" id="shopcart" onmouseover="shopcartmouseover()" onmouseout="shopcartmouseout()">購物車</a></span>
+            <!-- <a href="" style="height: 10px;" id="shopcart" onmouseover="shopcartmouseover()" onmouseout="shopcartmouseout()">購物車</a> -->
+        </div>
+    </div>
+    <div class="topnav" id="header">
+        <img src="data:image/png;base64,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" style="height: 80%;float: left;">
+        <img src="https://i01.appmifile.com/webfile/globalweb/picture/lingquan-pc.gif"style="height:80%;float:left">
+        <div style="padding: 0px 0px 10px 10px;float:left;margin-top: 2%">
+            <span id="headertext" style="font-weight: bolder;">Xiaomi手機</span>
+        </div>
+        <div style="float:left;margin-top: 2%;margin-left: 1%;font-weight: bolder;">
+            <span id="headertext">Redmi手機</span>
+        </div>
+        <div style="float:left;margin-top: 2%;margin-left: 1%;font-weight: bolder;">
+            <span id="headertext">POCO手機</span>
+        </div>
+        <div style="float:left;margin-top: 2%;margin-left: 1%;font-weight: bolder;">
+            <span id="headertext">智慧家庭</span>
+        </div>
+        <div style="float:left;margin-top: 2%;margin-left: 1%;font-weight: bolder;">
+            <span id="headertext">智慧科技</span>
+        </div>
+        <div style="float:left;margin-top: 2%;margin-left: 1%;font-weight: bolder;">
+            <span id="headertext">配件</span>
+        </div>
+        <div style="float:left;margin-top: 2%;margin-left: 1%;font-weight: bolder;">
+            <span id="headertext">服務</span>
+        </div>
+        <div style="float:left;margin-top: 2%;margin-left: 4%;font-weight: bolder;width:20%;height: 50%;">
+            <input class="search-bar" type="text" name="search" id="headersearchbar" placeholder=" 搜尋商品">
+        </div>
+    </div>
+    <div class="topnav" id="section">
+        <a href=""  style="margin-left: -20px;"><img src="https://i01.appmifile.com/webfile/globalweb/picture/2023nianhuojie-pc.jpg?width=1226&height=460"></a>
+        <ul class="" id="list">
+
+        </ul>
+    </div>
+    <div id="promo-list">
+        <a href=""><img style="margin-right: 10px;" src="https://i01.appmifile.com/webfile/globalimg/summer/20220811-170355.png?width=296&height=170"></a><a href=""><img img style="margin-right: 10px;" src="https://i01.appmifile.com/webfile/globalweb/picture/20221009-175620.jpg?width=296&height=170"></a><a href=""><img img style="margin-right: 15px;" src="https://i01.appmifile.com/webfile/globalimg/summer/20220811-170352.png?width=296&height=170"></a><a href=""><img img style="margin-right: 15px;" src="https://i01.appmifile.com/webfile/globalimg/summer/20220811-173533.png?width=296&height=170"></a>
+    </div>
+    <div id="advertisement">
+        <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/yanganna/member-s-p.png"></a>
+    </div>
+    <div id="star-goods-dig-box">
+        <div id="title">
+            <p style="font-size: 20pt;">明星單品</p>
+        </div>
+        <div id="star-goods"style="float: left;">
+            <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1656064284.60812631.png?width=160&height=160"  ></a>
+        </div>
+        <div id="star-goods2"style="float: left;">
+            <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1628492500.50683306.png?width=160&height=160"  ></a>
+        </div>
+        <div id="star-goods2"style="float: left;">
+            <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1630296437.53798138.png?width=160&height=160"  ></a>
+        </div>
+        <div id="star-goods2"style="float: left;">
+            <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1607410531.26011404.png?width=160&height=160"  ></a>
+        </div>
+        <div id="star-goods2"style="float: left;">
+            <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1593327726.88331847.png?width=160&height=160"  ></a>
+        </div>
+
+    </div>
+    <div id="main-goods">
+        <div id="popular-goods-title">
+        <p style="font-size: 20pt;">熱賣產品排行</p>
+        </div>
+        <div id="popular-goods">
+            <div id="star-goods2"style="float: left;margin-left:0px">
+                <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1613445002.13879491.png?width=160&height=160"  ></a>
+            </div>
+            <div id="star-goods2"style="float: left;">
+                <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1602579665.57575242.png?width=160&height=160"  ></a>
+            </div>
+            <div id="star-goods2"style="float: left;">
+                <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1633751777.51673296.png?width=160&height=160"  ></a>
+            </div>
+            <div id="star-goods2"style="float: left;">
+                <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1654848468.39241656.png?width=160&height=160"  ></a>
+            </div>
+            <div id="star-goods2"style="float: left;">
+                <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1645529333.04166200.png?width=160&height=160"  ></a>
+            </div>
+        </div>
+        <div id="aitandfamily-title">
+            <p style="font-size: 20pt;">智慧科技與家庭</p>
+        </div>
+        <div id="aitandfamily">
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left;margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-65monitor-04.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1670399442.54691094.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1665460092.32378525.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1656059374.69853800.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1621479160.6511830.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-12-books.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1626346503.08587000.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1626346767.79016104.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1642059129.29245338.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/pms_1657708914.39357176.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-w10-ultra.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1661156019.98216795.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1664274071.83322732.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1656657594.61783139.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1639474430.97678877.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-kongjing-4po.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1654848468.39241656.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1577167989.67723522.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1651198060.64381173.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1636539002.71722742.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-band-7pro.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1664274839.68139820.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1653461542.8592748.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1638442508.23396290.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1646290380.15354139.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-rd-buds-3lite.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1646290086.26076575.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1646293481.10538009.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1662088538.47691808.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1631932870.08686913.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px;">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-450.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1555664964.88468594.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1608286965.72071325.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1564892957.48138127.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1584677598.85521573.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-smart-liaoliji.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1572937053.34627034.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1659697005.56169523.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1586769544.24994646.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1542382266.2081030.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalweb/picture/20221125-142603.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1629102597.77461623.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1644222708.82874534.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1576495402.54211405.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1584678166.38932100.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-c300.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1601031300.9566893.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1573135477.55717128.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1653632375.35849769.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1625537103.92621257.jpg?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-krok.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1656064170.12135221.jpg?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1634114650.21895767.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1644547196.42651278.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1662533245.15999130.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-jinmoqiang-mini.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalweb/picture/20220812-165923.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1599703207.66844188.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1558492333.69238139.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1581320980.97265101.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-22.5w.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1635923706.23036208.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1657522001.80076862.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1581391576.5046929.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1666602541.09888225.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-yanchangxian-set.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1649831706.06868839.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1624522653.84174289.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1640775810.16755993.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1656667002.79797284.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div id="aitandfamily-goods">
+                <div id="star-goods2"style="float: left; margin-left:133px">
+                    <a href=""><img src="https://i01.appmifile.com/webfile/globalimg/summer/1114-yinshuiji-pet.jpg?width=234&height=380"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1650272609.92517629.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1656061856.49693908.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1592464563.31172925.png?width=150&height=150"  ></a>
+                </div>
+                <div id="star-goods2"style="float: left;">
+                    <a href=""><img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1582015124.78257204.png?width=150&height=150"  ></a>
+                </div>
+            </div>
+            <div style="height: 80px;"></div>
+        </div>
+    </div>
+    <div id="abovefooternav">
+
+    </div>
+    <div id="footer-box">
+        <div id="footer">
+            <div id="footer1-1" style="margin-left: 8%;">
+                <ul style="color: #999;list-style-type: none;">
+                    <li id="footer-text-b" style="font-size: larger;">產品與配件</li>
+                    <li id="footer-text"><a href="">熱門商品分類</a></li>
+                    <li id="footer-text"><a href="">全部商品分類</a></li>
+                    <li id="footer-text"><a href="">官方翻新機</a></li>
+                    <li id="footer-text"><a href="">F 碼通道</a></li>
+                </ul>
+            </div>
+            <div id="footer1-2">
+                <ul style="color: #999;list-style-type: none;">
+                    <li id="footer-text-b" style="font-size: larger;">幫助中心</li>
+                    <li id="footer-text"><a href="">購物指南</a></li>
+                    <li id="footer-text"><a href="">付款幫助</a></li>
+                    <li id="footer-text"><a href="">PayPal 使用幫助</a></li>
+                    <li id="footer-text"><a href="">分期付款</a></li>
+                    <li id="footer-text"><a href="">常見 Q&A</a></li>
+                    <li id="footer-text"><a href="">線上填寫折讓單入口</a></li>
+                    <li id="footer-text"><a href="">退款資料補充</a></li>
+                </ul>
+            </div>
+            <div id="footer1-3">
+                <ul style="color: #999;list-style-type: none;">
+                    <li id="footer-text-b" style="font-size: larger;">客戶支援</li>
+                    <li id="footer-text"><a href="">服務條款及細則</a></li>
+                    <li id="footer-text"><a href="">維修站地點</a></li>
+                    <li id="footer-text"><a href="">售後服務政策</a></li>
+                    <li id="footer-text"><a href="">退貨須知</a></li>
+                    <li id="footer-text"><a href="">配送規範</a></li>
+                    <li id="footer-text"><a href="">使用者指南</a></li>
+                    <li id="footer-text"><a href="">尊享服務</a></li>
+                </ul>
+            </div>
+            <div id="footer1-4">
+                <ul style="color: #999;list-style-type: none;">
+                    <li id="footer-text-b" style="font-size: larger;">關於小米</li>
+                    <li id="footer-text"><a href="">瞭解小米</a></li>
+                    <li id="footer-text"><a href="">管理團隊</a></li>
+                    <li id="footer-text"><a href="">隱私條款</a></li>
+                    <li id="footer-text"><a href="">誠信規範​</a></li>
+                    <li id="footer-text"><a href="">投資者關係​</a></li>
+                    <li id="footer-text"><a href="">信任中心</a></li>
+                </ul>
+            </div>
+            <div id="footer1-5">
+                <ul style="color: #999;list-style-type: none;">
+                    <li id="footer-text-b" style="font-size: larger;">小米哪裡買</li>
+                    <li id="footer-text"><a href="">小米之家/小米專賣店</a></li>
+                    <li id="footer-text"><a href="">官方授權通路</a></li>
+                    <li id="footer-text"><a href="">聯絡我們</a></li>
+                </ul>
+            </div>
+            <div id="footer1-5">
+                <ul style="color: #999;list-style-type: none;">
+                    <li id="footer-text-b" style="font-size: 8mm;">02-77255376</li>
+                    <li>服務時間 09:00-18:00 含節假日</li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="footer2">
+            <div>
+                <p style="color: #999;margin-top: -12px;text-align: center;">
+                    ________________________________________________________________________________________________________________________________________________________________________________________________________________________
+                </p>
+                <p style="color: #999;text-align: left;margin-left: 12%;">© 2010 - 2022 Xiaomi 版權所有 旗下網站：<a href>
+                        小米商城</a> <a href>MIUI</a></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div style="height: 37px;background-color: #ffffff;">
+
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>
